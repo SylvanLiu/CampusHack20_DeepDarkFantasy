@@ -14,18 +14,6 @@ for external_loop = 1:1:decetion_times
         a.Properties.VariableNames = featlabels_test;
         pred = trainedClassifier.trainedModelBagTree.predictFcn(a);
         disp(pred)
-        if pred == 1
-            disp(['User sitted/stood at: ', datestr(now)])
-        end
-        if pred == 2
-            disp(['Use danced at : ', datestr(now)])
-        end
-        if pred == 3
-            disp(['User ran at: ', datestr(now)])
-        end
-        if pred ==4
-            disp(['User walked at: ', datestr(now)])
-        end
     end
     m = mobiledev; % Turn on and initialise the receiver.
     m.MagneticSensorEnabled = 1; % Ensure the magnetic sensor is on.
