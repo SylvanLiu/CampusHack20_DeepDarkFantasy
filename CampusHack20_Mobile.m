@@ -5,25 +5,26 @@ trainedClassifier = load('trainedModelBagTree'); % Load .mat file from MATLAB De
 for external_loop = 1:1:decetion_times
     if external_loop ~= 1 % Skip the first loop for initialisation.
         [a,t] = magfieldlog(m); % a is the input matrix for the model.
-        % The size of a should be equal to interval * frequenc, 
-        % however due to the limited performance on mobile devices, 
+        % The size of a should be equal to interval * frequenc,
+        % however due to the limited performance on mobile devices,
         % it is apt to be marginally less than the estimation value.
         clear m; % Empty the log variable in every loop for saving memory.
-        a = array2table(a)
+        a = array2table(a);
         featlabels_test = {'x', 'y', 'z'};
         a.Properties.VariableNames = featlabels_test;
         pred = trainedClassifier.trainedModelBagTree.predictFcn(a);
+        disp(pred)
         if pred == 1
-            disp('User sitted/stood at: ', datestr(now))
+            disp(['User sitted/stood at: ', datestr(now)])
         end
         if pred == 2
-            disp('Use danced at : ', datestr(now))
+            disp(['Use danced at : ', datestr(now)])
         end
         if pred == 3
-            disp('User ran at: ', datestr(now))
+            disp(['User ran at: ', datestr(now)])
         end
         if pred ==4
-            disp('User walked at: ', datestr(now))
+            disp(['User walked at: ', datestr(now)])
         end
     end
     m = mobiledev; % Turn on and initialise the receiver.
