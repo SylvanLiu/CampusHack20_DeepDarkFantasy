@@ -1,7 +1,7 @@
 
 ## Everything of this project has been finished in 12 hours by one friend of mine, Yuzhe Yang, and me in the 2020 Hackathon of our university.
 
-DeepDarkFantasy was our team name.
+### DeepDarkFantasy was our team name.
 ![alt text](https://github.com/SylvanLiu/CampusHack20_DeepDarkFantasy/blob/master/DeepDarkFantasy.jpg)
 
 ### Include:
